@@ -1,0 +1,33 @@
+@media (min-width: 1400px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+  .row {
+    margin: 0;
+  }
+  .images-double{
+    margin: 10px;
+    padding: 5px;
+  }
+  .images-double img{
+    padding: 20px;
+  }
+  .titlePage {
+    text-align: center;
+    font-family: 'OpenSans';
+    padding-bottom: 40px;
+  }
+  .titlePage h3 {
+    text-transform: uppercase;
+  }
+  .row span.text-info{
+    font-size: 20px;
+    color: #1a1919!important;
+  }
+  /* .image img{
+    width: auto;
+  } */
+  
+  
+  

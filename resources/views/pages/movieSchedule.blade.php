@@ -12,7 +12,7 @@
                 <div class="movie-content">
                     <div class="">   
                         <h3>
-                            <a href="#">
+                            <a href="{{url('detail')}}">
                                 <b>Maleficent tiên hắc ám 2 ( 2D) - C13 </b>
                             </a>
                             <span>2D</span>
@@ -66,7 +66,7 @@
                 <div class="movie-content">
                     <div class="">   
                         <h3>
-                            <a href="#">
+                            <a href="{{url('detail')}}">
                                 <b>Maleficent tiên hắc ám 2 ( 2D) - C13 </b>
                             </a>
                             <span>2D</span>

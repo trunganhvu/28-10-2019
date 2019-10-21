@@ -18,3 +18,5 @@ Route::get('/info', 'PageController@getInformation');
 Route::get('/news', 'PageController@getNews');
 Route::get('/promotion', 'PageController@getPromotion');
 Route::get('/booking', 'PageController@getBooking');
+Route::get('/login', 'PageController@getLogin');
+Route::get('/register', 'PageController@getRegister');

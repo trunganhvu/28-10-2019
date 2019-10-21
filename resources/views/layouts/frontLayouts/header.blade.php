@@ -1,11 +1,10 @@
-
 <div class= "container"></div>
 <div class="header">
-	<div class="logo">BOOKING FILM</div>
+	<div class="logo"> <a href="{{url('/')}}">BOOKING FILM</a></div>
 	<div class="right">
 		<div class="login">
-			<div><a href="">Đăng nhập</a></div>
-			<div><a href="">Đăng kí</a></div>
+			<div><a href="{{url('login')}}">Đăng nhập</a></div>
+			<div><a href="{{url('register')}}">Đăng kí</a></div>
 		</div>
 		<div class="sdt">Hotline:0123456789</div>
 	</div>

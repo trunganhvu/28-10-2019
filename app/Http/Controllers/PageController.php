@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    //
     public function getIndex(){
         return view('pages.index');
     }
@@ -27,5 +26,11 @@ class PageController extends Controller
     }
     public function getBooking(){
         return view('pages.booking');
+    }
+    public function getLogin(){
+        return view('pages.login');
+    }
+    public function getRegister(){
+        return view('pages.register');
     }
 }
