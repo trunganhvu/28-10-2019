@@ -12,12 +12,12 @@
 </div>
 <div class="nav-bar">
 	<ul class="topnav">
-	  <li><a class="active" href="#">Trang chủ</a></li>
-	  <li><a href="#">Giới thiệu</a></li>
-	  <li><a href="#">Lịch chiếu</a></li>
-	   <li><a href="#">Tin tức</a></li>
-	    <li><a href="#">Khuyến mãi</a></li>
-	  <li class="right"><a href="#about">Đặt vé</a></li>
+	  <li><a class="active" href="/">Trang chủ</a></li>
+	  <li><a href="{{url('info')}}"">Giới thiệu</a></li>
+	  <li><a href="{{url('schedule')}}">Lịch chiếu</a></li>
+	   <li><a href="{{url('news')}}">Tin tức</a></li>
+	    <li><a href="{{url('promotion')}}">Khuyến mãi</a></li>
+	  <li class="right"><a href="{{url('booking')}}">Đặt vé</a></li>
 	</ul>
 </div>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

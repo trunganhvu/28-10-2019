@@ -16,4 +16,16 @@ class PageController extends Controller
     public function getMovieSchedule(){
         return view('pages.movieSchedule');
     }
+    public function getInformation(){
+        return view('pages.information');
+    }
+    public function getNews(){
+        return view('pages.news');
+    }
+    public function getPromotion(){
+        return view('pages.promotion');
+    }
+    public function getBooking(){
+        return view('pages.booking');
+    }
 }

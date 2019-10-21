@@ -14,3 +14,7 @@
 Route::get('/', 'PageController@getIndex' );
 Route::get('/detail', 'PageController@getDetail');
 Route::get('/schedule', 'PageController@getMovieSchedule');
+Route::get('/info', 'PageController@getInformation');
+Route::get('/news', 'PageController@getNews');
+Route::get('/promotion', 'PageController@getPromotion');
+Route::get('/booking', 'PageController@getBooking');
