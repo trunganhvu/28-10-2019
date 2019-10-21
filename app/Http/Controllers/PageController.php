@@ -13,4 +13,7 @@ class PageController extends Controller
     public function getDetail(){
         return view('pages.detail');
     }
+    public function getMovieSchedule(){
+        return view('pages.movieSchedule');
+    }
 }

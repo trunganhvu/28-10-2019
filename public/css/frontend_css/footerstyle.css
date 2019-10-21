@@ -1,0 +1,33 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+footer {
+	background-color: #333;
+}
+.menu {
+	display: flex;
+	justify-content: center;
+
+}
+.menu div a {	
+	text-decoration: none;
+	color: white;
+	font-family: OpenSans-Light;
+	padding: 20px 10px;
+
+}
+.content{
+	color: #eee;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.content-container {
+	padding: 50px;
+	background-color: #333;
+}
+.menu div a.active {
+    color: red;
+}

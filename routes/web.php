@@ -13,4 +13,4 @@
 
 Route::get('/', 'PageController@getIndex' );
 Route::get('/detail', 'PageController@getDetail');
- 
+Route::get('/schedule', 'PageController@getMovieSchedule');

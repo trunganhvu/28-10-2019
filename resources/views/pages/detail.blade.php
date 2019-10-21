@@ -1,4 +1,6 @@
 @extends('layouts.frontLayouts.master')
 @section('content')
-<P>DETAIL</P>
+<P>DETAILdddddddddddddddddddddddddddddddddddddđ</P>
+<p>DETAILdddddddddddddddddddddddddddddddddddddđ</p>
+<p>DETAILdddddddddddddddddddddddddddddddddddddđ</p>
 @endsection()
