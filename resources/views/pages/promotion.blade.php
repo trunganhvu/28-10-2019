@@ -17,22 +17,22 @@
         <ul class="list-items">
             <li>
                 <a href="#">
-                    <img src="{{asset('images/promotion/event/promotion1.jpg')}}" alt="">
+                    <img src="{{asset('images/promotion/event/promotion1.jpg')}}" class="w-100" alt="">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="{{asset('images/promotion/event/promotion2.jpg')}}" alt="">
+                    <img src="{{asset('images/promotion/event/promotion2.jpg')}}" class="w-100" alt="">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="{{asset('images/promotion/event/promotion3.jpg')}}" alt="">
+                    <img src="{{asset('images/promotion/event/promotion3.jpg')}}" class="w-100" alt="">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="{{asset('images/promotion/event/promotion4.jpg')}}" alt="">
+                    <img src="{{asset('images/promotion/event/promotion4.jpg')}}" class="w-100" alt="">
                 </a>
             </li>
             <li>

@@ -89,7 +89,7 @@
             </div>
             <div class="row">
                 <ul>
-                <li>Thời gian diễn ra: </li><span class="news-content">Ngày dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddthứ 2 cuối cùng mỗi tháng</span><br>
+                <li>Thời gian diễn ra: </li><span class="news-content">Ngày thứ 2 cuối cùng mỗi tháng</span><br>
                 <li>Nội dung: </li><span class="news-content">Ưu đãi giá vé 50.000đ/ Vé</span><br>
                 </ul>
                 <button type="button" class="btn btn-description">Xem chi tiết</button>

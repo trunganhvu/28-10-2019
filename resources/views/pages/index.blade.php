@@ -16,7 +16,7 @@
   <div class="column ">
     <div class="content">
       <a href="{{asset('detail')}}">
-        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Mountains" style="width:100%">
+        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Mountains" class="w-100">
       </a>
       <p>Lorem ipsum dolor..</p>
     </div>
@@ -24,7 +24,7 @@
   <div class="column ">
     <div class="content">
       <a href="{{asset('detail')}}">
-        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Lights" style="width:100%">
+        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Lights" class="w-100">
       </a>
       <p>Lorem ipsum dolor..</p>
     </div>

@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
+        <div class="row pt-5">
             <span class="text-info">
                 Trung tâm Chiếu phim Quốc gia (tên giao dịch quốc tế là National Cinema Center) 
                 là đơn vị sự nghiệp công lập, trực thuộc Bộ Văn hóa, Thể thao và Du lịch, được 
