@@ -1,3 +1,5 @@
+@push('styles')
+    <link href="{{ asset('css/frontend_css/header.css') }}" rel="stylesheet">
 <div class= "container"></div>
 <div class="header">
 	<div class="logo"> <a href="{{url('/')}}">BOOKING FILM</a></div>

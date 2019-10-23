@@ -1,0 +1,74 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  } */
+  
+  
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+  }
+  
+  .row {
+    margin: 10px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+   
+  }
+  
+  /* Clear floats after rows */ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    /* background-color: white; */
+    padding: 10px;
+  }
+  
+  .phim {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 2px #949494;
+  }
+  .phim > div {
+    padding: 10px; 
+  }
+  .phim div a{
+    color: black;   
+    text-decoration: none;
+  }
+  .phim .active a{
+      color: red;
+  }
+  
+  
+  
+  

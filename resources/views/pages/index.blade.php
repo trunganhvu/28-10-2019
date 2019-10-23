@@ -1,57 +1,95 @@
 @extends('layouts.frontLayouts.master')
 @section('content')
+@push('styles')
+    <link href="{{ asset('css/frontend_css/index.css') }}" rel="stylesheet">
+    <div class="main">
 
-<div class="list-film">
-	<div><a class = "active" href="#">PHIM ĐANG CHIẾU</a></div>
-	<div><a href="#">PHIM HAY SẮP CHIẾU</a></div>
-</div>
 
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/6.jpeg"  width="600" height="400">
-  </a>
+<div class="phim"> 
+  <div class="active"><a href="#">PHIM HAY ĐANG CHIẾU</a> </div>
+  <div><a href="#"> PHIM HAY SẮP CHIẾU</a> </div>
 
 </div>
 
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/7.jpeg"  width="600" height="400">
-  </a>
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column ">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Mountains" style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column ">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/6.jpeg')}}" alt="Lights" style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column nature">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/7.jpeg')}}"  style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  
+  <div class="column ">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/8.jpeg')}}"  style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column ">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/9.jpeg')}}"  style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column ">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/10.jpeg')}}" " style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
 
+  <div class="column p">
+    <div class="content">
+      <a href="{{asset('detail')}}">  
+        <img src="{{asset('images/avaMovie/11.jpeg')}}"  style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/12.jpeg')}}" style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column people">
+    <div class="content">
+      <a href="{{asset('detail')}}">
+        <img src="{{asset('images/avaMovie/13.jpeg')}}"  style="width:100%">
+      </a>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+<!-- END GRID -->
 </div>
 
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/8.jpeg"  width="600" height="400">
-  </a>
-
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/9.jpeg"  width="600" height="400">
-  </a>
-
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/10.jpeg"  width="600" height="400">
-  </a>
-
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/11.jpeg"  width="600" height="400">
-  </a>
-
-</div>
-
-<div class="gallery">
-  <a target="_blank" href="">
-    <img src="image/12.jpeg"  width="600" height="400">
-  </a>
-
+<!-- END MAIN -->
 </div>
 @endsection()

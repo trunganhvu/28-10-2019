@@ -1,0 +1,79 @@
+@media (min-width: 1400px) {
+    .container {
+      max-width: 1300px;
+    }
+}
+.row{
+    margin: 0;
+}
+.titlePage{
+    text-align: center;
+    font-family: 'OpenSans';
+    padding: 30px;
+    text-transform: uppercase;
+}
+.btn{
+    text-transform: uppercase;
+}
+.news{
+    font-size: 14px;
+    color: black;
+    
+    
+}
+.news ul {
+    list-style: none;
+    padding: 0!important;
+}
+.news ul li {
+    display: inline-block;
+}
+.news hr {
+    width: 100%;
+    color: #cccccc;
+    size: 1px;
+}
+.news img {
+    max-width: 100%;
+    height: auto;
+}
+.news:hover img {
+    opacity: 0.75;
+}
+.poster {
+    float: left;
+}
+.news-title {
+    font-style: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1919;
+    margin: 0;
+}
+.news-content {
+    font-weight: bold;
+    text-align: justify;
+}
+.btn-description {
+    background: #fff;
+    border-radius: 30px;
+    padding: 9px 40px;
+    color: #e71a0f;
+    font-size: 14px;
+    border: 1px solid #e71a0f;
+    margin: 0px 20px 10px 0px;
+}
+.btn-description:hover {
+    background: red;
+    color: white;
+    font-weight: bold;
+}
+.container ul.list-posters{
+
+}
+.container ul.list-posters li.item-poster{
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    width: 30%;
+}

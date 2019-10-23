@@ -1,0 +1,33 @@
+@media (min-width: 1400px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+.row {
+    margin: 0 !important;
+}
+.container .titlePage{
+    text-align: center;
+    font-family: 'OpenSans';
+    padding: 40px;
+    text-transform: uppercase;
+}
+.container.name-promotion h2{
+    float: left;
+}
+.container div.title a{
+    color: black;
+}
+.container div.title a:hover{
+    text-decoration: none;
+    color: #333;
+}
+.container ul.list-items li{
+    list-style-type: none;
+    display: inline-block;
+    width: auto;
+    margin: 10px;
+}
+.container ul.list-items{
+    padding-bottom: 30px;
+}

@@ -1,29 +1,29 @@
 footer {
 	background-color: #333;
 }
-.menu {
+footer .menu {
 	display: flex;
 	justify-content: center;
 	padding-top: 20px;
 }
-.menu div a {	
+footer .menu div a {	
 	text-decoration: none;
 	color: white;
 	font-family: OpenSans-Light;
 	padding: 80px 10px;
 	
 }
-.content{
+footer .content{
 	color: #eee;
 	display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
 }
-.content-container {
+footer .content-container {
 	padding: 50px;
 	background-color: #333;
 }
-.menu div a.active {
+footer .menu div a.active {
     color: red;
 }
