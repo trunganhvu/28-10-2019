@@ -5,7 +5,7 @@
     <div class="container mt-3">
         <div class="titlePage">
             <h3>Giới thiệu chung</h3>
-            <img src="img31.png" alt="">
+            <img src="{{asset('images/imgTitle/info.png')}}" alt="">
         </div>
     </div>
     <div class="container">
