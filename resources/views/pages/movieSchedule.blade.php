@@ -5,12 +5,12 @@
 <ul class="list-movie">
     <li class="item-movie">
         <div class="movie-view">
-            <div class="movie-frame">
-                <div class="movie-content">
+            <div class="movie-frame row">
+                <div class="movie-content col-3 p-5">
                     <img src="{{asset('images/movieSchedule/12.jpeg')}}" alt="movie-avatar">
                 </div>
-                <div class="movie-content">
-                    <div class="">   
+                <div class="movie-content col-9 pt-5">
+                    <div class="d-flex justify-content-between align-items-baseline">   
                         <h3>
                             <a href="{{url('detail')}}">
                                 <b>Maleficent tiên hắc ám 2 ( 2D) - C13 </b>
