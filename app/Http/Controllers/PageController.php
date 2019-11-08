@@ -9,10 +9,12 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function getIndex(){
-        return view('pages.index');
+        $indexhome = DB::table('indexhome')->get();
+        return view('pages.index', compact('indexhome'));
     }
     public function getDetail(){
-        return view('pages.detail');
+        $detailphim = DB::table('detailphim')->get();
+        return view('pages.detail', compact('detailphim'));
     }
     public function getMovieSchedule(){
         $lichchieu = DB::table('lichchieu')->get();
