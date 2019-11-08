@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\news;
+use Illuminate\Support\Facades\DB;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;    
 
 class PageController extends Controller
 {
@@ -13,13 +15,16 @@ class PageController extends Controller
         return view('pages.detail');
     }
     public function getMovieSchedule(){
-        return view('pages.movieSchedule');
+        $lichchieu = DB::table('lichchieu')->get();
+        return view('pages.movieSchedule', compact('lichchieu'));
     }
     public function getInformation(){
-        return view('pages.information');
+        $gioithieu = DB::table('gioithieu')->get();
+        return view('pages.information', compact('gioithieu'));
     }
     public function getNews(){
-        return view('pages.news');
+        $news=DB::table('news')->get();
+        return view('pages.news', compact('news'));
     }
     public function getPromotion(){
         return view('pages.promotion');
