@@ -11,13 +11,13 @@
 
   <!-- Portfolio Gallery Grid -->
   <div class="row">
-  @foreach($indexhome as $index)
+  @foreach($home as $h)
     <div class="column ">
       <div class="content">
-        <a href="{{asset('detail')}}">
-          <img src="{{asset($index->photo)}}" alt="Mountains" class="w-100">
+        <a href="{{route('detail',$h->id)}}">
+          <img src="{{asset($h->photo)}}" alt="Mountains" class="w-100">
         </a>
-        <p>{{$index->title}}</p>
+        <p>{{$h->title}}</p>
       </div>
     </div>
   @endforeach

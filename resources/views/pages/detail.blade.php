@@ -12,11 +12,11 @@
 <div class="container">
 	<div class="row detail">
 		<div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
-			<img src="{{asset('images/avaMovie/12.jpeg')}}">
+			<img src="{{asset($detailphim->photo)}}">
 		</div>
 		<div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
 			<div class="row col-12">
-				<p class="nameMovie">Maleficent tiên hắc ám 2 ( 2D) - C13</p>
+				<p class="nameMovie">{{$detailphim->title}}</p>
 				<hr>
 			</div>
 			<div class="row">
@@ -38,10 +38,7 @@
 
 				</div>
 				<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-					<p class="description">Thời gian trôi qua thật bình yên với Maleficent và Aurora. Mặc dù mối quan hệ của cả hai được tạo dựng từ những tổn thương, thù hận rồi sau đó mới đến tình yêu thương nhưng cuối cùng thì
-						nó cũng đã đơm hoa kết trái. Tuy vậy, xung đột giữa hai giới: loài người và tiên tộc vẫn vẫn luôn hiện hữu. Cuộc hôn nhân vốn bị trì hoãn giữa Aurora và Hoàng tử Phillips chính là cầu nối gắn kết Vương
-						quốc Ulstead và nước láng giềng Moors lại với nhau. Bất ngờ thay, sự xuất hiện của một phe đồng minh hoàn toàn mới sẽ khiến Maleficent và Aurora bị chia cắt về hai chiến tuyến trong trận Đại Chiến. Trận
-					chiến này sẽ thử thách lòng tin lẫn tình cảm của cả hai. Liệu rằng họ có thật sự trở thành một gia đình hay không? Tất cả sẽ được giải đáp trong Maleficent: Mistress of Evil/ Tiên Hắc Ám 2.</p>
+					<p class="description">{{$detailphim->description}}.</p>
 				</div>
 			</div>
 		</div>

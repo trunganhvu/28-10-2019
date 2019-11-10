@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class index extends Model
+class home extends Model
 {
     //
-    protected $table = "indexhome";
+    protected $table = "home";
     protected $primatyKey = "id";
 }

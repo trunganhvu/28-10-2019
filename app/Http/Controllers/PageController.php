@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 use App\news;
 use Illuminate\Support\Facades\DB;
+use App\home;
 
 use Illuminate\Http\Request;    
 
 class PageController extends Controller
 {
     public function getIndex(){
-        $indexhome = DB::table('indexhome')->get();
-        return view('pages.index', compact('indexhome'));
+        $home = DB::table('home')->get();
+        return view('pages.index', compact('home'));
     }
-    public function getDetail(){
-        $detailphim = DB::table('detailphim')->get();
+    public function getDetail($id){
+        $detailphim = home::where('id', $id)->first();
         return view('pages.detail', compact('detailphim'));
     }
     public function getMovieSchedule(){

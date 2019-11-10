@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'PageController@getIndex' );
-Route::get('/detail', 'PageController@getDetail');
+Route::get('/', 'PageController@getIndex' )->name('index');
+Route::get('/detail/{id}', 'PageController@getDetail')->name('detail');
 Route::get('/schedule', 'PageController@getMovieSchedule');
 Route::get('/info', 'PageController@getInformation');
 Route::get('/news', 'PageController@getNews');
@@ -21,3 +21,6 @@ Route::get('/booking', 'PageController@getBooking');
 Route::get('/login', 'PageController@getLogin');
 Route::get('/register', 'PageController@getRegister');
 Route::post('login', "TestController@check");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

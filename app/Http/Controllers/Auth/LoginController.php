@@ -65,7 +65,7 @@ class LoginController extends Controller
             if(Auth::attempt(['email'=>$email, 'password' => $password])){
                 dd('thanh cong');
             } else{
-                return redirect()->back();
+                return redirect()->route('index');
             }
         }
         // dd($validator);
