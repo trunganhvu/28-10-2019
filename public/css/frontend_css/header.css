@@ -88,5 +88,7 @@ html, body {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
 }
-
+.header .login ul.navbar-nav .ml-auto{
+  list-style-type: none;
+}
 
