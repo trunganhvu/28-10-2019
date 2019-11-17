@@ -64,6 +64,12 @@
                             </div>
                         </div>
                     </form>
+                        <br />
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                              <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Google</a>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

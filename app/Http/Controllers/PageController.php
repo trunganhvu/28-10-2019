@@ -13,6 +13,10 @@ class PageController extends Controller
         $home = DB::table('home')->get();
         return view('pages.index', compact('home'));
     }
+    public function getHome(){
+        $home = DB::table('home')->get();
+        return view('home', compact('home'));
+    }
     public function getDetail($id){
         $detailphim = home::where('id', $id)->first();
         return view('pages.detail', compact('detailphim'));
