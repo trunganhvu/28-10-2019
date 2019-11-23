@@ -13,7 +13,7 @@
   <div class="row">
   @foreach($home as $h)
     <div class="column ">
-      <div class="content">ada
+      <div class="content">
         <a href="{{route('detail',$h->id)}}">
           <img src="{{asset($h->photo)}}" alt="Mountains" class="w-100">
         </a>
