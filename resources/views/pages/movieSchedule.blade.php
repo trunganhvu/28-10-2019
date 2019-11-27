@@ -29,26 +29,9 @@
                     <div class="movie-gallery">
                         <ul class="movie-times">
                             <li>
-                                <a href="#">09:00</a>
+                                <a href="#">{{$lc->timestart}}</a>
                             </li>
-                            <li>
-                                <a href="#">10:00</a>
-                            </li>
-                            <li>
-                                <a href="#">11:00</a>
-                            </li>
-                            <li>
-                                <a href="#">12:00</a>
-                            </li>
-                            <li>
-                                <a href="#">12:00</a>
-                            </li>
-                            <li>
-                                <a href="#">12:00</a>
-                            </li>
-                            <li>
-                                <a href="#">12:00</a>
-                            </li>
+                            
 
                         </ul>
                     </div>

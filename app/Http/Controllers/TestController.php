@@ -113,16 +113,23 @@ class TestController extends Controller
     }
     public function edittimetablefilm(Request $request){
         $re=$request->all();
-        $infofilm=DB::table('films')->where('film_id',$re['film_id'])
-        ->select('film_time')->get();
-        dd($infofilm);
+        $getTime=DB::table('films')->where('film_id',$re['film_id'])->select('film_time')->first();
+        //$time = strtotime($re['timestart'].$getTime->film_time.'minutes');
         $timetablefilm=DB::table('timetablefilm')->where('timetablefilm_id',$re['timetablefilm_id'])
         ->update(['film_id'=>$re['film_id'], 'timestart'=>$re['timestart'],
-        'timeend'=>$re['timestart']+$infofilm->film_time, 'room_id'=>$re['room_id']]);
+        'timeend'=>date('Y-m-d H:i:s', strtotime($re['timestart'].$getTime->film_time.'minutes')), 
+        'room_id'=>$re['room_id']]);
         return redirect('/time-table-film');
     }
-    public function createtimetablefilm(){
-        
+    public function createtimetablefilm(Request $re){
+        $getTime=DB::table('films')->where('film_id',$re['film_id'])->select('film_time')->first();
+        $timetablefilm = new timetablefilm;
+        $timetablefilm->film_id=$re->film_id;
+        $timetablefilm->timestart=$re->timestart;
+        $timetablefilm->timeend=date('Y-m-d H:i:s', strtotime($re['timestart'].$getTime->film_time.'minutes'));
+        $timetablefilm->room_id=$re->room_id;
+        $timetablefilm->save();
+        return redirect('/time-table-film');
     }
 
 }
