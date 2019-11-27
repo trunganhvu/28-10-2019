@@ -15,17 +15,17 @@
         <li class="item-poster">
             <div class="news col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div class="poster col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <img src="{{asset('images/news/news1.jpeg')}}">
+                    <img src="{{asset($n->film_photo)}}">
                 </div>
                 <div class="right-poster col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="row">
-                    <p class="news-title">{{$n->titlle}}</p>
+                    <p class="news-title">{{$n->film_name}}</p>
                     <hr>
                     </div>
                     <div class="row">
                         <ul>
-                        <li>Thời gian diễn ra: </li><span class="news-content">19 Tháng Mười 2019</span><br>
-                        <li>Nội dung: </li><span class="news-content">{{$n->content}}</span><br>
+                        <li>Nội dung phim: </li><span class="news-content">{{$n->film_desc}}</span><br>
+                        <li>Phim </li><span class="news-content"> {{$n->film_from}}</span><br>
                         </ul>
                         <button type="button" class="btn btn-description">Xem chi tiết</button>
                     </div>

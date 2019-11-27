@@ -14,10 +14,10 @@
   @foreach($home as $h)
     <div class="column ">
       <div class="content">
-        <a href="{{route('detail',$h->id)}}">
-          <img src="{{asset($h->photo)}}" alt="Mountains" class="w-100">
+        <a href="{{route('detail',$h->film_id)}}">
+          <img src="{{asset($h->film_photo)}}" alt="Mountains" class="w-100">
         </a>
-        <p>{{$h->title}}</p>
+        <p>{{$h->film_name}}</p>
       </div>
     </div>
   @endforeach

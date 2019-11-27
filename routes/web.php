@@ -40,15 +40,22 @@ Route::get('/charts', function(){
 Route::get('/listfilm', function(){
     return view('layouts.admin.listfilm');
 });
-Route::get('/table-rooms', function(){
-    return view('layouts.admin.rooms');
-});
-Route::get('/table-films', function(){
-    return view('layouts.admin.films');
-});
-Route::get('/time-table-film', function(){
-    return view('layouts.admin.timetablefilm');
-});
-Route::get('/table-pricelist', function(){
-    return view('layouts.admin.pricelist');
-});
+Route::get('/table-rooms','TestController@tableroom');
+Route::get('/deleteroom/{id}', 'TestController@deleteroom')->name('deleteroom');
+Route::post('/editroom', 'TestController@editroom')->name('editroom');
+Route::post('/createroom', 'TestController@createroom')->name('createroom');
+
+Route::get('/table-films', 'TestController@listfilm');
+Route::get('/deletefilm/{id}', 'TestController@deletefilm')->name('deletefilm');
+Route::post('/editfilm', 'TestController@editfilm')->name('editfilm');
+Route::post('/createfilm', 'TestController@createfilm')->name('createfilm');
+
+Route::get('/time-table-film', 'TestController@timetablefilm');
+Route::get('/delete/{id}', 'TestController@deletetimetablefilm')->name('deletetimetablefilm');
+Route::post('/edittimetablefilm', 'TestController@edittimetablefilm')->name('edittimetablefilm');
+Route::post('/createtimetablefilm', 'TestController@createtimetablefilm')->name('createtimetablefilm');
+
+Route::get('/table-pricelist', 'TestController@tablepricelist');
+Route::get('/deletepricelist/{id}', 'TestController@deletepricelist')->name('deletepricelist');
+Route::post('/editpricelist', 'TestController@editpricelist')->name('editpricelist');
+Route::post('/createpricelist', 'TestController@createpricelist')->name('createpricelist');

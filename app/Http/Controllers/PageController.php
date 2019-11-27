@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function getIndex(){
-        $home = DB::table('home')->get();
+        $home = DB::table('films')->get();
         return view('pages.index', compact('home'));
     }
     public function getHome(){
@@ -18,11 +18,18 @@ class PageController extends Controller
         return view('home', compact('home'));
     }
     public function getDetail($id){
-        $detailphim = home::where('id', $id)->first();
+        $detailphim = home::where('film_id', $id)->first();
         return view('pages.detail', compact('detailphim'));
     }
     public function getMovieSchedule(){
-        $lichchieu = DB::table('lichchieu')->get();
+        $lichchieu = DB::table('timetablefilm')
+        ->join('films', 'timetablefilm.film_id','=', 'films.film_id')
+        ->join('rooms', 'timetablefilm.room_id','=', 'rooms.room_id')
+        // ->select('timetablefilm.timestart', 'timetablefilm.timeend','films.film_name',
+        // 'films.film_time', 'films.film_desc', 'films.film_photo','films.film_from',
+        // 'rooms.rooms_name','rooms.room_size')
+        ->select('timetablefilm.*', 'rooms.*','films.*')
+        ->get();
         return view('pages.movieSchedule', compact('lichchieu'));
     }
     public function getInformation(){
@@ -30,7 +37,7 @@ class PageController extends Controller
         return view('pages.information', compact('gioithieu'));
     }
     public function getNews(){
-        $news=DB::table('news')->get();
+        $news=DB::table('films')->get();
         return view('pages.news', compact('news'));
     }
     public function getPromotion(){
