@@ -23,7 +23,7 @@ Route::get('/register', 'PageController@getRegister');
 Route::post('login', "TestController@check");
 Auth::routes();
 
-Route::get('/home', 'PageController@getHome')->name('home');
+Route::get('/home', 'PageController@getIndex')->name('home');
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/callback', 'SocialAuthGoogleController@callback');
 

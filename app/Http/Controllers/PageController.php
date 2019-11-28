@@ -13,10 +13,6 @@ class PageController extends Controller
         $home = DB::table('films')->get();
         return view('pages.index', compact('home'));
     }
-    public function getHome(){
-        $home = DB::table('home')->get();
-        return view('home', compact('home'));
-    }
     public function getDetail($id){
         $detailphim = home::where('film_id', $id)->first();
         return view('pages.detail', compact('detailphim'));
@@ -26,6 +22,7 @@ class PageController extends Controller
         ->join('films', 'timetablefilm.film_id','=', 'films.film_id')
         ->join('rooms', 'timetablefilm.room_id','=', 'rooms.room_id')
         ->select('timetablefilm.*', 'rooms.*','films.*')
+        ->groupBy('timetablefilm.film_id')
         ->get();
         // $slotfilm=DB::table('timetablefilm')
         // ->join('film', 'timetablefilm.film_id','=', 'films.film_id');
