@@ -28,10 +28,14 @@
                     </div>
                     <div class="movie-gallery">
                         <ul class="movie-times">
+                            @php
+                            $times = \App\timetablefilm::where(['film_id' => $lc->film_id])->get()
+                            @endphp
+                        @foreach($times as $ti)
                             <li>
-                                <a href="#">{{$lc->timestart}}</a>
+                                <a href="#">{{$ti->timestart}}</a>
                             </li>
-                            
+                        @endforeach
 
                         </ul>
                     </div>

@@ -55,9 +55,8 @@
                       <th>{{$p->price_id}}</th>
                       <th>{{$p->price_name}}</th>
                       <th>{{$p->price}}</th>
-                        <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Edit</button></th>
-
-                          <div class="modal" id="myModal1">
+                        <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$p->price_id}}">Edit</button></th>
+                          <div class="modal" id="myModal{{$p->price_id}}">
                             <div class="modal-dialog">
                               <div class="modal-content">
                                 <div class="modal-header">

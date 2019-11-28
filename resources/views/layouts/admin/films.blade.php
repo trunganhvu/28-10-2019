@@ -44,8 +44,7 @@
                     </div>
                     <div class="md-form mb-5">
                       <label data-error="wrong" data-success="right" for="defaultForm">Price photo</label>
-                      <input type="text" id="defaultForm" name="film_photo" class="form-control validate" require>
-                    </div>
+                      <input data-preview="#preview" name="input_img" type="file" id="imageInput">                    </div>
                   </div>
                   <div class="modal-footer">
                     <input type="submit" value="Add">
@@ -77,25 +76,10 @@
                     <th>{{$film->film_desc}}</th>
                     <th>{{$film->film_from}}</th>
                     <th>{{$film->film_photo}}</th>
-                    <!-- <th><button href="" id="edit">Edit</button></th>
-                      <div id="formEdit" class="modal">
-                        <div class="modal-content">
-                          <span class="close">&times;</span>
-                          <form action="{!! url('editfilm') !!}" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
-                            <input type="text" name="film_id" placeholder="Id room." value = "{{$film->film_id}}" hidden>
-                            <input type="text" name="film_name" placeholder="Name film." value = "{{$film->film_name}}"><br>
-                            <input type="number" name="film_time" placeholder="Time film." value= "{{$film->film_time}}"><br>
-                            <input type="text" name="film_desc" placeholder="Description film." value= "{{$film->film_desc}}"><br>
-                            <input type="text" name="film_from" placeholder="From." value= "{{$film->film_from}}"><br>
-                            <input type="text" name="film_photo" placeholder="Photo film." value= "{{$film->film_photo}}"><br>                          
-                            <input type="submit" value="Save">
-                          </form>
-                        </div>
-                      </div> -->
-                      <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Edit</button></th>
+                    <!-- <th><img src="{{asset($film->film_photo)}}" alt=""></th> -->
+                      <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$film->film_id}}">Edit</button></th>
 
-                      <div class="modal" id="myModal1">
+                      <div class="modal" id="myModal{{$film->film_id}}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -106,11 +90,6 @@
                             <div class="modal-body">        
                               <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
                               <input type="text" name="film_id" placeholder="Id room." value = "{{$film->film_id}}" hidden>
-                              <!-- <input type="text" name="film_name" placeholder="Name film." value = "{{$film->film_name}}"><br>
-                              <input type="number" name="film_time" placeholder="Time film." value= "{{$film->film_time}}"><br>
-                              <input type="text" name="film_desc" placeholder="Description film." value= "{{$film->film_desc}}"><br>
-                              <input type="text" name="film_from" placeholder="From." value= "{{$film->film_from}}"><br>
-                              <input type="text" name="film_photo" placeholder="Photo film." value= "{{$film->film_photo}}"><br> -->
                               <div class="md-form mb-5">
                                 <label data-error="wrong" data-success="right" for="defaultForm">Name film</label>
                                 <input type="text" id="defaultForm" name="film_name" class="form-control validate" value = "{{$film->film_name}}">

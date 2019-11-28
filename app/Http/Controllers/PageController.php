@@ -25,11 +25,14 @@ class PageController extends Controller
         $lichchieu = DB::table('timetablefilm')
         ->join('films', 'timetablefilm.film_id','=', 'films.film_id')
         ->join('rooms', 'timetablefilm.room_id','=', 'rooms.room_id')
-        // ->select('timetablefilm.timestart', 'timetablefilm.timeend','films.film_name',
-        // 'films.film_time', 'films.film_desc', 'films.film_photo','films.film_from',
-        // 'rooms.rooms_name','rooms.room_size')
         ->select('timetablefilm.*', 'rooms.*','films.*')
         ->get();
+        // $slotfilm=DB::table('timetablefilm')
+        // ->join('film', 'timetablefilm.film_id','=', 'films.film_id');
+        // $arrTime;
+        // foreach($lichchieu->film_id as $i){
+            
+        // }
         return view('pages.movieSchedule', compact('lichchieu'));
     }
     public function getInformation(){
@@ -43,8 +46,9 @@ class PageController extends Controller
     public function getPromotion(){
         return view('pages.promotion');
     }
-    public function getBooking(){
-        return view('pages.booking');
+    public function getBooking($id){
+        $bf=DB::table('films')->where('film_id', $id)->first();
+        return view('pages.booking', compact('bf'));
     }
     public function getLogin(){
         return view('pages.login');

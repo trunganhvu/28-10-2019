@@ -25,16 +25,26 @@
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm">Film id</label>
-                          <input type="text" id="defaultForm" name="film_id" class="form-control validate" require>
+                          <input type="text" id="defaultForm" name="film_id" class="form-control validate" required>
                         </div>
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm">Time start</label>
-                          <input type="text" id="defaultForm" name="timestart" class="form-control validate" require>
+                          <input type="text" id="defaultForm" name="timestart" class="form-control validate" required>
                         </div>
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm">Room number</label>
                           <input type="text" id="defaultForm" name="room_id" class="form-control validate" require>
                         </div>
+                        
+                        <!-- <div class="md-form mb-5">
+                          <label data-error="wrong" data-success="right" for="defaultForm">Room number</label>
+                          <input  id="defaultForm" name="room_id" class="form-control validate" require>
+                          <select class="form-control" required>
+                            @foreach($room as $r)
+                              <option value="{{$r->room_id}}" require>{{$r->room_name}}</option>
+                            @endforeach
+                          </select>
+                        </div> -->
                     </div>
                     <div class="modal-footer">
                       <input type="submit" value="Add">
@@ -63,11 +73,11 @@
                         <th>{{$item->film_id}}</th>
                         <th>{{$item->timestart}}</th>
                         <th>{{$item->timeend}}</th>
-                        <th>{{$item->room_id}}</th>
+                        <th>{{$item->room_name}}</th>
                         
-                          <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Edit</button></th>
+                          <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$item->timetablefilm_id}}">Edit</button></th>
 
-                              <div class="modal" id="myModal1">
+                              <div class="modal" id="myModal{{$item->timetablefilm_id}}">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">

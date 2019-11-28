@@ -44,18 +44,19 @@
               <thead>
                 <tr>
                   <th>room_id</th>
-                  <th>room_size</th>
                   <th>room_name</th>
+                  <th>room_size</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($rooms as $ro)
+                
                 <tr>
                   <th>{{$ro->room_id}}</th>
-                  <th>{{$ro->room_size}}</th>
                   <th>{{$ro->room_name}}</th>
+                  <th>{{$ro->room_size}} ghế</th>
                   <!-- <th><button href="" id="edit">Edit</button></th>
                   <div id="formEdit" class="modal">
                     <div class="modal-content">
@@ -69,9 +70,9 @@
                       </form>
                     </div>
                   </div> -->
-                  <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Edit</button></th>
+                  <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$ro->room_id}}">Edit</button></th>
 
-                    <div class="modal" id="myModal1">
+                    <div class="modal" id="myModal{{$ro->room_id}}">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">

@@ -32,7 +32,7 @@
 					</ul>
 
 
-					<button type="button" class="btn btn-buy">Mua vé</button>
+					<a href="{{route('booking',$detailphim->film_id)}}"><button type="button" class="btn btn-buy">Mua vé</button></a>
 					<!-- <button type="button" class="btn btn-watch">Xem trailer</button> -->
 
 
