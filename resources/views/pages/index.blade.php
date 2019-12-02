@@ -6,7 +6,7 @@
 <div class="main">
   <div class="phim">
     <div class="active"><a href="#">PHIM HAY ĐANG CHIẾU</a> </div>
-    <div><a href="#"> PHIM HAY SẮP CHIẾU</a> </div>
+    <!-- <div><a href="#"> PHIM HAY SẮP CHIẾU</a> </div> -->
   </div>
 
   <!-- Portfolio Gallery Grid -->

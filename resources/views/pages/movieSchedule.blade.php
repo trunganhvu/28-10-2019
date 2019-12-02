@@ -33,7 +33,7 @@
                             @endphp
                         @foreach($times as $ti)
                             <li>
-                                <a href="#">{{$ti->timestart}}</a>
+                                <a href="{{route('booking',$ti->timetablefilm_id)}}">{{$ti->timestart}}</a>
                             </li>
                         @endforeach
 

@@ -117,10 +117,12 @@ class TestController extends Controller
     public function timetablefilm(){
         $timetablefilm=DB::table('timetablefilm')
             ->join('rooms','timetablefilm.room_id','=','rooms.room_id')
-            ->select('timetablefilm.*', 'rooms.*')
+            ->join('films','timetablefilm.film_id','=','films.film_id')
+            ->select('timetablefilm.*', 'rooms.*','films.*')
             ->get();
         $room=DB::table('rooms')->get();
-        return view('layouts.admin.timetablefilm', compact('timetablefilm'), compact('room'));
+        $films=DB::table('films')->get();
+        return view('layouts.admin.timetablefilm', compact('timetablefilm','room','films'));
     }
     public function deletetimetablefilm($id){
         $timetablefilm=DB::table('timetablefilm')->where('timetablefilm_id', $id);

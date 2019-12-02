@@ -24,8 +24,12 @@
                     <div class="modal-body">        
                         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
                         <div class="md-form mb-5">
-                          <label data-error="wrong" data-success="right" for="defaultForm">Film id</label>
-                          <input type="text" id="defaultForm" name="film_id" class="form-control validate" required>
+                          <label data-error="wrong" data-success="right" for="defaultForm">Film Name</label>
+                          <select class="form-control" name="film_id" required>
+                            @foreach($films as $f)
+                              <option value="{{$f->film_id}}">{{$f->film_name}}</option>
+                            @endforeach
+                          </select>
                         </div>
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm">Time start</label>
@@ -33,18 +37,12 @@
                         </div>
                         <div class="md-form mb-5">
                           <label data-error="wrong" data-success="right" for="defaultForm">Room number</label>
-                          <input type="text" id="defaultForm" name="room_id" class="form-control validate" require>
-                        </div>
-                        
-                        <!-- <div class="md-form mb-5">
-                          <label data-error="wrong" data-success="right" for="defaultForm">Room number</label>
-                          <input  id="defaultForm" name="room_id" class="form-control validate" require>
-                          <select class="form-control" required>
+                          <select class="form-control" name="room_id" required>
                             @foreach($room as $r)
-                              <option value="{{$r->room_id}}" require>{{$r->room_name}}</option>
+                              <option value="{{$r->room_id}}">{{$r->room_name}}</option>
                             @endforeach
                           </select>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="modal-footer">
                       <input type="submit" value="Add">
@@ -58,7 +56,7 @@
                 <thead>
                     <tr>
                         <th>timetable_id</th>
-                        <th>film_id</th>
+                        <th>film_name</th>
                         <th>timestart</th>
                         <th>timeend</th>
                         <th>room_id</th>
@@ -70,7 +68,7 @@
                   @foreach($timetablefilm as $item)
                     <tr>
                         <th>{{$item->timetablefilm_id}}</th>
-                        <th>{{$item->film_id}}</th>
+                        <th>{{$item->film_name}}</th>
                         <th>{{$item->timestart}}</th>
                         <th>{{$item->timeend}}</th>
                         <th>{{$item->room_name}}</th>
@@ -88,21 +86,37 @@
                                     <div class="modal-body">        
                                       <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
                                       <input type="number" name="timetablefilm_id" placeholder="Id." value = "{{$item->timetablefilm_id}}" hidden>
-                                      <!-- <input type="number" name="film_id" placeholder="Name film." value = "{{$item->film_id}}"><br>
-                                      <input type="text" name="timestart" placeholder="Time film." value= "{{$item->timestart}}"><br>
-                                      <input type="text" name="timeend" placeholder="Description film." value= "{{$item->timeend}}"><br>
-                                      <input type="number" name="room_id" placeholder="From." value= "{{$item->room_id}}"><br> -->
-                                      <div class="md-form mb-5">
+                                      <!-- <div class="md-form mb-5">
                                         <label data-error="wrong" data-success="right" for="defaultForm">Film id</label>
                                         <input type="text" id="defaultForm" name="film_id" class="form-control validate" value = "{{$item->film_id}}">
+                                      </div> -->
+                                      <div class="md-form mb-5">
+                                        <label data-error="wrong" data-success="right" for="defaultForm">Film Name</label>
+                                        <select class="form-control" name="film_id" required>
+                                          @foreach($films as $f)
+                                            @if($f->film_id==$item->film_id)
+                                            <option value="{{$f->film_id}}" selected>{{$f->film_name}}</option>
+                                            @else
+                                            <option value="{{$f->film_id}}" >{{$f->film_name}}</option>
+                                            @endif
+                                          @endforeach
+                                        </select>
                                       </div>
                                       <div class="md-form mb-5">
                                         <label data-error="wrong" data-success="right" for="defaultForm">Time start</label>
                                         <input type="text" id="defaultForm" name="timestart" class="form-control validate" value= "{{$item->timestart}}">
                                       </div>
                                       <div class="md-form mb-5">
-                                        <label data-error="wrong" data-success="right" for="defaultForm">Room number</label>
-                                        <input type="text" id="defaultForm" name="room_id" class="form-control validate" value= "{{$item->room_id}}">
+                                        <label data-error="wrong" data-success="right" for="defaultForm">Room name</label>
+                                        <select class="form-control" name="room_id" required>
+                                          @foreach($room as $r)
+                                            @if($r->room_id==$item->room_id)
+                                            <option value="{{$r->room_id}}" selected>{{$r->room_name}}</option>
+                                            @else
+                                            <option value="{{$r->room_id}}" >{{$r->room_name}}</option>
+                                            @endif
+                                          @endforeach
+                                        </select>
                                       </div>
                                     </div>
                                     <div class="modal-footer">

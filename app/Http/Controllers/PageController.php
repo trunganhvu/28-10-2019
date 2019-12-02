@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\news;
 use Illuminate\Support\Facades\DB;
 use App\home;
+use App\layvitri;
 
 use Illuminate\Http\Request;    
 
@@ -43,14 +45,39 @@ class PageController extends Controller
     public function getPromotion(){
         return view('pages.promotion');
     }
-    public function getBooking($id){
-        $bf=DB::table('films')->where('film_id', $id)->first();
-        return view('pages.booking', compact('bf'));
+    public function getBooking( $id){
+        $film = DB::table('timetablefilm')->where('timetablefilm_id', $id)
+            ->join('films', 'timetablefilm.film_id', '=', 'films.film_id')
+            ->first();
+        $room = DB::table('timetablefilm')->where('timetablefilm_id', $id)
+            ->join('rooms', 'rooms.room_id', '=', 'timetablefilm.room_id')
+            ->first();
+        $layvitri=DB::table('layvitri')->where('timetable_id',$id)->pluck('location')->toArray();
+        // dd($layvitri);
+        return view('pages.booking', compact('film', 'room','layvitri'));
     }
     public function getLogin(){
         return view('pages.login');
     }
     public function getRegister(){
         return view('pages.register');
+    }
+    public function getbook(Request $re){
+        if(Auth::check()){
+            $request=$re->all();
+            $seat=$re->seat;
+            foreach($seat as $s){
+            $layvitri=new layvitri;
+            $layvitri->timetable_id=$re->timetable_id;         
+            $layvitri->location=$s;
+            $layvitri->user_id=Auth::user()->id;
+            $layvitri->save();
+            return redirect()->back();
+            }
+        }
+        else{
+            return redirect('/login');
+        }
+
     }
 }

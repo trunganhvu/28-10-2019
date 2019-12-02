@@ -18,6 +18,8 @@ Route::get('/info', 'PageController@getInformation');
 Route::get('/news', 'PageController@getNews');
 Route::get('/promotion', 'PageController@getPromotion');
 Route::get('/booking/{id}', 'PageController@getBooking')->name('booking');
+Route::get('/create', 'PageController@getbook');
+Route::post('/create', 'PageController@getbook');
 Route::get('/login', 'PageController@getLogin');
 Route::get('/register', 'PageController@getRegister');
 Route::post('login', "TestController@check");
