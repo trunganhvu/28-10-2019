@@ -66,14 +66,19 @@ class PageController extends Controller
         if(Auth::check()){
             $request=$re->all();
             $seat=$re->seat;
-            foreach($seat as $s){
-            $layvitri=new layvitri;
-            $layvitri->timetable_id=$re->timetable_id;         
-            $layvitri->location=$s;
-            $layvitri->user_id=Auth::user()->id;
-            $layvitri->save();
-            return redirect()->back();
+            if ($seat==null){
+                return redirect()->back();
             }
+            else{
+            foreach($seat as $s){
+                $layvitri=new layvitri;
+                $layvitri->timetable_id=$re->timetable_id;         
+                $layvitri->location=$s;
+                $layvitri->user_id=Auth::user()->id;
+                $layvitri->save();
+                
+            }}
+            return redirect()->back();
         }
         else{
             return redirect('/login');
