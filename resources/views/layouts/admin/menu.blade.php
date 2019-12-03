@@ -101,7 +101,7 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Table order</span></a>
       </li>
-
+  
     </ul>
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

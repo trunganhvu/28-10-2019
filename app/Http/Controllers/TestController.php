@@ -83,7 +83,8 @@ class TestController extends Controller
         return view('layouts.admin.films', compact('films'));
     }
     public function createfilm(Request $re){
-        $film = new films;redirect('/table-orders');
+        $film = new films;
+        //redirect('/table-orders');
         if ($re->film_name==""||$re->film_time==""||$re->film_desc=="||$re->film_from=="||$re->film_photo){
             return redirect('/table-films');
         }
@@ -156,8 +157,15 @@ class TestController extends Controller
         }
         
     }
+    public function updateordertable(){
+        
+    }
     public function ordertable(){
-        $order=DB::table('orders')->get();
+        $order=DB::table('orders')
+        ->join('users','orders.user_id','=','users.id')
+        ->select('orders.*', 'users.*')
+        ->get();
+        //$user=DB::table('users')->get();
         return view('layouts.admin.order', compact('order'));
     }
     public function deleteorder($id){

@@ -62,8 +62,8 @@
                         <th>{{$o->user_id}}</th>
                         <th>{{$o->timetable_id}}</th>
                         <th>{{$o->price_id}}</th>
-                          <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Edit</button></th>
-                              <div class="modal" id="myModal1">
+                          <th><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{$o->orders_id}}">Edit</button></th>
+                              <div class="modal" id="myModal{{$o->orders_id}}">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
