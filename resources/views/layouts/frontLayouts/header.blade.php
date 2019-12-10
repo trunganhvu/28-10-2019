@@ -2,7 +2,7 @@
 <link href="{{ asset('css/frontend_css/header.css') }}" rel="stylesheet">
 <div class= "container"></div>
 <div class="header">
-    <div class="logo"> <a href="{{url('/')}}"><img src="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /images/inforCinema/logo.png" alt="booking film"></a></div>
+    <div class="logo"> <a href="{{url('/')}}"><img src="/images/inforCinema/LogoWeb.png" alt="booking film"></a></div>
     <div class="right">
         <div class="login">
           <ul class="navbar-nav ml-auto">
