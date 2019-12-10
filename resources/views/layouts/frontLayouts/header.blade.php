@@ -2,7 +2,7 @@
 <link href="{{ asset('css/frontend_css/header.css') }}" rel="stylesheet">
 <div class= "container"></div>
 <div class="header">
-    <div class="logo"> <a href="{{url('/')}}">BOOKING FILM</a></div>
+    <div class="logo"> <a href="{{url('/')}}"><img src="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /images/inforCinema/logo.png" alt="booking film"></a></div>
     <div class="right">
         <div class="login">
           <ul class="navbar-nav ml-auto">
@@ -44,7 +44,7 @@
 <div class="nav-bar">
     <ul class="topnav">
       <li><a class="active" href="/">Trang chủ</a></li>
-      <li><a href="{{url('info')}}"">Giới thiệu</a></li>
+      <!-- <li><a href="{{url('info')}}"">Giới thiệu</a></li> -->
       <li><a href="{{url('schedule')}}">Lịch chiếu</a></li>
       <li><a href="{{url('news')}}">Tin tức</a></li>
       <li><a href="{{url('promotion')}}">Khuyến mãi</a></li>

@@ -2,7 +2,6 @@
 @section('content')
 @push('styles')
     <link href="{{ asset('css/frontend_css/booking.css') }}" rel="stylesheet">
-    <!DOCTYPE html>
 <head>
   <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
   <script>
@@ -17,18 +16,18 @@
 
     var channel = pusher.subscribe('my-channel');
     channel.bind('form-submitted', function(data) {
-      console.log("Ket qua la:"+data.seat + typeof data.seat);
-    console.log("Do dai: "+Object.keys(data.seat).length);
-    var i;
-    for (i = 0 ; i < Object.keys(data.seat).length; i++) {
-        console.log("Ket qua lakkk:"+data.seat[i]);
-        var h1=document.getElementById(data.seat[i]);
-        var att = document.createAttribute("checked");
-        att.value = "checked";
-        var att1=document.createAttribute("disabled");
-        h1.setAttributeNode(att);
-        h1.setAttributeNode(att1);
-    }
+        console.log("Ket qua la:"+data.seat + typeof data.seat);
+        console.log("Do dai: "+Object.keys(data.seat).length);
+        var i;
+        for (i = 0 ; i < Object.keys(data.seat).length; i++) {
+            console.log("Ket qua lakkk:"+data.seat[i]);
+            var h1=document.getElementById(data.seat[i]);
+            var att = document.createAttribute("checked");
+            att.value = "checked";
+            var att1=document.createAttribute("disabled");
+            h1.setAttributeNode(att);
+            h1.setAttributeNode(att1);
+        }
 
       });
   </script>

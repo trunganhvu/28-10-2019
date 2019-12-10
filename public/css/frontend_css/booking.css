@@ -72,3 +72,8 @@
             background-color: #f7f7f7;
             border: none;
         }
+        
+        .container {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
