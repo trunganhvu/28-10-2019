@@ -24,6 +24,9 @@ Route::get('/login', 'PageController@getLogin');
 Route::get('/register', 'PageController@getRegister');
 Route::post('login', "TestController@check");
 Auth::routes();
+Route::post('postticket',"PageController@postticket")->name('postticket');
+
+Route::get('/confirmbill', "PageController@getConfirm")->name('confirm');
 
 Route::get('/home', 'PageController@getIndex')->name('home');
 Route::get('/redirect', 'SocialAuthGoogleController@redirect');

@@ -6,6 +6,8 @@ use App\news;
 use Illuminate\Support\Facades\DB;
 use App\home;
 use App\layvitri;
+use App\orders;
+use App\Events\FormSubmitted;
 
 use Illuminate\Http\Request;    
 
@@ -45,7 +47,7 @@ class PageController extends Controller
     public function getPromotion(){
         return view('pages.promotion');
     }
-    public function getBooking( $id){
+    public function getBooking($id){
         $film = DB::table('timetablefilm')->where('timetablefilm_id', $id)
             ->join('films', 'timetablefilm.film_id', '=', 'films.film_id')
             ->first();
@@ -53,8 +55,15 @@ class PageController extends Controller
             ->join('rooms', 'rooms.room_id', '=', 'timetablefilm.room_id')
             ->first();
         $layvitri=DB::table('layvitri')->where('timetable_id',$id)->pluck('location')->toArray();
-        // dd($layvitri);
-        return view('pages.booking', compact('film', 'room','layvitri'));
+        $price;
+        if(Auth::check()){
+            $user=DB::table('users')->where('users.id',Auth::user()->id)->first();
+            $price=DB::table('pricelist')->where('price_id',$user->price_id)->first();
+        }
+        else{
+            $price=DB::table('pricelist')->where('price_id',1)->first();
+        }
+        return view('pages.booking', compact('film', 'room','layvitri','price'));
     }
     public function getLogin(){
         return view('pages.login');
@@ -66,18 +75,29 @@ class PageController extends Controller
         if(Auth::check()){
             $request=$re->all();
             $seat=$re->seat;
+            event(new FormSubmitted($seat));
             if ($seat==null){
                 return redirect()->back();
             }
             else{
-            foreach($seat as $s){
-                $layvitri=new layvitri;
-                $layvitri->timetable_id=$re->timetable_id;         
-                $layvitri->location=$s;
-                $layvitri->user_id=Auth::user()->id;
-                $layvitri->save();
-                
-            }}
+                foreach($seat as $s){
+                    $layvitri=new layvitri;
+                    $layvitri->timetable_id=$re->timetable_id;         
+                    $layvitri->location=$s;
+                    $layvitri->user_id=Auth::user()->id;
+                    $layvitri->save();
+
+                }
+                $order=new orders;
+                $order->user_id=Auth::user()->id;
+                $order->timetable_id=$re->timetable_id;
+                $order->quantity=count($seat);
+                $order->price_id=Auth::user()->price_id;
+                // $price=DB::table('pricelist')->where('pricelist.price_id',Auth::user()->price_id)->first();
+                // $order->total=var_dump($price->price*count($seat));
+                $order->save();
+
+            }
             return redirect()->back();
         }
         else{
@@ -85,7 +105,9 @@ class PageController extends Controller
         }
 
     }
-    public function updateodertable(){
+    public function getConfirm(){
         
+        return view('pages.confirmBill');
     }
+    
 }

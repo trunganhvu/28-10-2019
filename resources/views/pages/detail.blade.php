@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-<div class="container movie-schedule">
+<!-- <div class="container movie-schedule">
 	<div class="title">
 		<a href="#">
 			<img src="icon06.png" alt="">
@@ -75,5 +75,5 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 @endsection()
