@@ -3,11 +3,11 @@
 <div>
 	<footer>
 		<div class="menu">
-			<div><a href="{{url('')}}" class="active">Trang chủ</a></div>
+			<div><a href="{{url('')}}" class="">Trang chủ</a></div>
 			<div><a href="{{url('schedule')}}">Lịch chiếu</a></div>
 			<div><a href="{{url('news')}}">Tin tức</a></div>
 			<div><a href="{{url('promotion')}}">Khuyến mãi</a></div>
-			<div><a href="{{url('info')}}">Giới thiệu</a></div>	
+			<!-- <div><a href="{{url('info')}}">Giới thiệu</a></div>	 -->
 		</div>
 		<div class= content-container>
 			<div class="content">

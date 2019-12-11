@@ -12,18 +12,15 @@
                 </div>
                 <div class="movie-content col-9 pt-5">
                     <div class="d-flex justify-content-between align-items-baseline">   
-                        <h3>
                             <a href="{{route('detail',$lc->film_id)}}">
-                                <b>{{$lc->film_name}} </b>
+                                <h3>{{$lc->film_name}} </h3>
                             </a>
-                            <span>2D</span>
-                        </h3>
+                            <span> 2D</span>
                     </div>
                     <div class="movie-gallery">
                         <p>
                             <b>Thời lượng: </b>{{$lc->film_time}}<br>
                             <b>Xuất xứ: </b>{{$lc->film_from}}<br>
-                            <b>Đối tượng: </b>"Cấm khán giả dưới 13 tuổi"<br>
                         </p>
                     </div>
                     <div class="movie-gallery">

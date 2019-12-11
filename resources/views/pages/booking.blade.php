@@ -8,32 +8,31 @@
 
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
-
     var pusher = new Pusher('ac7564df71fbefaad71c', {
       cluster: 'ap1',
       forceTLS: true
     });
-
+    // .container_seat input:checkbox[disabled] {
+    //         outline: 2px solid red;
+    //         background: red!important;
+    //     }
     var channel = pusher.subscribe('my-channel');
     channel.bind('form-submitted', function(data) {
-        console.log("Ket qua la:"+data.seat + typeof data.seat);
-        console.log("Do dai: "+Object.keys(data.seat).length);
         var i;
         for (i = 0 ; i < Object.keys(data.seat).length; i++) {
-            console.log("Ket qua lakkk:"+data.seat[i]);
+            document.getElementById(data.seat[i]).style.backgroundColor = "coral";
             var h1=document.getElementById(data.seat[i]);
             var att = document.createAttribute("checked");
             att.value = "checked";
             var att1=document.createAttribute("disabled");
             h1.setAttributeNode(att);
             h1.setAttributeNode(att1);
+            //document.getElementById(data.seat[i]).style.backgroundColor ="red";
         }
 
       });
   </script>
 </head>
-
-
 <div class="container">
     <div class="row">
         <div class="card text-center" style="width: 18rem;">
@@ -77,7 +76,6 @@
                             @endfor
                         </table>
                         <input name="timetable_id" type="textbox" value="{{$film->timetablefilm_id}}" hidden>
-                        <!-- <input type="submit" name="Confirm"> -->
                         @if(Auth::check())
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Next</button>
                         <div class="modal " id="myModal">
@@ -91,18 +89,28 @@
                                         <div class="modal-body">
                                             <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
                                             <p>Thời gian: {{$film->timestart}}</p>
-                                            <div class="form-inline">
+                                            <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label data-error="wrong" data-success="right" for="defaultForm-email">Họ và tên</label>
-                                                    <input type="text" id="defaultForm-name" value="{{ Auth::user()->name }}" class="form-control validate" disabled>
+                                                    <label for="inputEmail4">Họ và tên</label>
+                                                    <input type="name" class="form-control"  value="{{ Auth::user()->name }}" id="inputEmail4" placeholder="Fullname" disabled>
                                                 </div>
-
                                                 <div class="form-group col-md-6">
-                                                    <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-                                                    <input type="text" id="defaultForm-email" value="{{ Auth::user()->email }}" class="form-control validate" require>
+                                                    <label for="inputPassword4">Email</label>
+                                                    <input type="email" class="form-control" value="{{ Auth::user()->email }}" id="inputPassword4" placeholder="Email">
                                                 </div>
                                             </div>
-                                            <div class="form-inline">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail4">Số ghế</label>
+                                                    <input type="number" class="form-control"  value="" id="soghe" placeholder="Số ghế" disabled>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputPassword4">Tổng tiền</label>
+                                                    <input type="number" class="form-control" value="" id="tongtien" placeholder="Tổng tiền" disabled>
+                                                </div>
+                                            </div>
+                                                
+                                            <!-- <div class="form-inline">
                                                 <div class="md-form form-group col-md-6">
                                                     <label data-error="wrong" data-success="right" for="soghe">Số ghế đã chọn</label>
                                                     <input type="number" id="soghe" name="" class="form-control validate" require>
@@ -112,11 +120,11 @@
                                                     <label data-error="wrong" data-success="right" for="tongtien">Tổng tiền</label>
                                                     <input type="number" id="tongtien" name="" class="form-control validate" require>
                                                 </div>
-                                            </div>
+                                            </div> -->
 
                                         </div>
                                         <div class="modal-footer">
-                                        <input type="submit" value="Confirm">
+                                            <input type="submit" value="Confirm" class="btn btn-primary" data-toggle="modal">
                                         </div>
                                     </form>
                                 </div>

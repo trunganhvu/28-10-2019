@@ -6,8 +6,6 @@
     <div class="right">
         <div class="login">
           <ul class="navbar-nav ml-auto">
-            <!-- <div><a href="{{url('login')}}">Đăng nhập</a></div>
-                <div><a href="{{url('register')}}">Đăng kí</a></div> -->
                 @guest
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -43,7 +41,7 @@
 </div>
 <div class="nav-bar">
     <ul class="topnav">
-      <li><a class="active" href="/">Trang chủ</a></li>
+      <li><a class="" href="/">Trang chủ</a></li>
       <!-- <li><a href="{{url('info')}}"">Giới thiệu</a></li> -->
       <li><a href="{{url('schedule')}}">Lịch chiếu</a></li>
       <li><a href="{{url('news')}}">Tin tức</a></li>
